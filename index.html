@@ -158,11 +158,26 @@
 </script>
 <script src="static/zepto.min.js" type="text/javascript"></script>
 <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js" type="text/javascript"></script>
-<script type="text/javascript">
-  let url = location.href;
+<script type=text/javascript>
+  var url = location.href;
+  var title = '福特途睿欧 邀您坐享其程';
+  var desc = '纯正欧系、非凡商务，与您一起畅享全新移动商务休闲新体验！';
 
-  if (url.indexOf('?') > -1) {
-    window.location.href = "http://h5.fute.nowui.com/#/";
+  if (url.indexOf('/?from=') > -1) {
+    url = url.replace('#/', '');
+    url = url.replace('/?from=', '/#/?from=');
+  }
+
+  if (url.indexOf('title=') > -1) {
+
+  } else {
+    if (url.indexOf('?') > -1) {
+      url = url + '&title=' + title + '&desc=' + desc + '&appShareType=1';
+    } else {
+      url = url + '?title=' + title + '&desc=' + desc + '&appShareType=1';
+    }
+
+    window.location.href = url;
   }
 
   $.ajax({
@@ -195,8 +210,8 @@
       window.share_config = {
         "share": {
           "imgUrl": "http://h5.fute.nowui.com/static/image/icon.jpg",
-          "desc": "纯正欧系、非凡商务，与您一起畅享全新移动商务休闲新体验！",
-          "title": '福特途睿欧 邀您坐享其程',
+          "desc": desc,
+          "title": title,
           "link": window.location.href,
           "success": function () {
 
