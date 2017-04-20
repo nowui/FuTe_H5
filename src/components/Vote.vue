@@ -935,7 +935,8 @@
             fute_phone: this.phone,
             fute_province: this.province,
             fute_city: this.city,
-            fute_distributor: this.distributor
+            fute_distributor: this.distributor,
+            fute_platform: typeof(localStorage.getItem('platform')) == 'undefined' ? '' : localStorage.getItem('platform')
           })
         }).then(response => {
           loading.hide();

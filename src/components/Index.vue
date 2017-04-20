@@ -1,13 +1,13 @@
 <template>
   <div class="index">
-      <div class="logo"></div>
-      <div class="fute"></div>
-      <div class="ouxi"></div>
-      <div class="pinpai" @click="handleVideo()"></div>
-      <div class="jingmei" @click="handlePhoto()"></div>
-      <div class="shijia" @click="handleVote()"></div>
-      <div class="daodian"></div>
-    </div>
+    <div class="logo"></div>
+    <div class="fute"></div>
+    <div class="ouxi"></div>
+    <div class="pinpai" @click="handleVideo()"></div>
+    <div class="jingmei" @click="handlePhoto()"></div>
+    <div class="shijia" @click="handleVote()"></div>
+    <div class="daodian"></div>
+  </div>
 </template>
 
 <script>
@@ -16,14 +16,17 @@
 
   export default {
     data () {
-      return {
-
-      }
+      return {}
     },
     created () {
 
     },
     mounted () {
+      let platform = this.$route.query.platform;
+      if (typeof(platform) != 'undefined') {
+        localStorage.setItem("platform", platform);
+      }
+
 
     },
     beforeDestroy () {
