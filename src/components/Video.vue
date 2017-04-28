@@ -7,7 +7,7 @@
     <div class="jingmei" @click="handlePhoto()"></div>
     <div class="back" @click="handleBack()"></div>
     <video id="video" controls="controls" autoplay="autoplay">
-      <source src="http://ookrw7epp.bkt.clouddn.com/video.mp4" type="video/mp4"/>
+      <source src="http://1253625529.vod2.myqcloud.com/e6b4aa6fvodtransgzp1253625529/d4db0d1d9031868222910082038/f0.f20.mp4" type="video/mp4"/>
     </video>
   </div>
 </template>
